@@ -1,0 +1,33 @@
+.message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper {
+  .square {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+  }
+
+  .btn {
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+    width: 100px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #000000;
+    opacity: 1;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .btn:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
