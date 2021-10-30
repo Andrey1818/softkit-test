@@ -11,7 +11,7 @@ import {statusEnum} from "./status.enum";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
-  @Input()enum = statusEnum
+  @Input() enum = statusEnum
   count: number
   blueSquares$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([])
   reset$: Subject<void> = new Subject<void>()

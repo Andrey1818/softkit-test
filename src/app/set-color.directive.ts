@@ -24,14 +24,15 @@ export class SetColorDirective implements OnInit, OnDestroy {
         return
       }
       const rgb = []
-      for(let i = 0; i < 3 ; i++){
-        rgb.push(Math.floor(Math.random() * (255 - 100))+ 100)
+      for (let i = 0; i < 3; i++) {
+        rgb.push(Math.floor(Math.random() * (255 - 100)) + 100)
       }
       this.render.setStyle(this.element.nativeElement, 'background', `rgb(${rgb.join(',')})`)
     })
   }
+
   ngOnDestroy() {
-    if(!this.subscription$) return
+    if (!this.subscription$) return
     this.subscription$.unsubscribe()
   }
 }

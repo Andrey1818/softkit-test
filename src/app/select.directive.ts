@@ -5,7 +5,7 @@ import {Observable, Subscription} from "rxjs";
 @Directive({
   selector: '[appSelect]'
 })
-export class OrangeBorderDirective implements OnInit, OnDestroy{
+export class OrangeBorderDirective implements OnInit, OnDestroy {
   @Input() squareIndex: number;
   @Input() reset$: Observable<void>
   subscription$: Subscription
@@ -14,17 +14,18 @@ export class OrangeBorderDirective implements OnInit, OnDestroy{
     private element: ElementRef,
     private renderer: Renderer2,
     @Host() private registerService: RegisterService
-  ) { }
+  ) {
+  }
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.subscription$ = this.reset$.subscribe(() => {
       this.renderer.setStyle(this.element.nativeElement, 'border', null)
     })
   }
 
   @HostListener('click')
-  onClick(){
-    if(!this.registerService.selectedSquare.includes(this.squareIndex)) {
+  onClick() {
+    if (!this.registerService.selectedSquare.includes(this.squareIndex)) {
       this.registerService.selectedSquare.push(this.squareIndex)
       return this.renderer.setStyle(this.element.nativeElement, 'border', '2px solid #FF4500')
     }
